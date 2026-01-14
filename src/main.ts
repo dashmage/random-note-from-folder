@@ -14,8 +14,8 @@ export default class RandomNoteFromFolderPlugin extends Plugin {
 		await this.loadSettings();
 
 		this.addCommand({
-			id: "open-random-note-from-folder",
-			name: "Open random note from folder",
+			id: "open-random-note",
+			name: "Open folder-scoped random note",
 			callback: async () => {
 				await openRandomNoteFromFolder(this.app, this.settings.folderPath);
 			},
