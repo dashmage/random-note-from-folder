@@ -2,9 +2,8 @@
 	"id": "random-note-from-folder",
 	"name": "Random Note From Folder",
 	"version": "1.0.0",
-	"minAppVersion": "0.15.0",
-	"description": "Open a random note from a configured directory",
-	"author": "dashmage",
 	"minAppVersion": "1.0.0",
+	"description": "Open a random markdown note from a configured folder (recursive)",
+	"author": "dashmage",
 	"isDesktopOnly": false
 }

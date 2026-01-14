@@ -1,36 +1,44 @@
-import {App, PluginSettingTab, Setting} from "obsidian";
-import MyPlugin from "./main";
+import { App, PluginSettingTab, Setting } from "obsidian";
 
-export interface MyPluginSettings {
-	mySetting: string;
+import RandomNoteFromFolderPlugin from "./main";
+
+export interface RandomNoteFromFolderSettings {
+	/**
+	 * Folder path relative to vault root. Empty means entire vault.
+	 * Example: "Notes/Daily"
+	 */
+	folderPath: string;
 }
 
-export const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: 'default'
-}
+export const DEFAULT_SETTINGS: RandomNoteFromFolderSettings = {
+	folderPath: "",
+};
 
-export class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+export class RandomNoteFromFolderSettingTab extends PluginSettingTab {
+	plugin: RandomNoteFromFolderPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: RandomNoteFromFolderPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
 
 	display(): void {
-		const {containerEl} = this;
-
+		const { containerEl } = this;
 		containerEl.empty();
 
 		new Setting(containerEl)
-			.setName('Settings #1')
-			.setDesc('It\'s a secret')
-			.addText(text => text
-				.setPlaceholder('Enter your secret')
-				.setValue(this.plugin.settings.mySetting)
-				.onChange(async (value) => {
-					this.plugin.settings.mySetting = value;
-					await this.plugin.saveSettings();
-				}));
+			.setName("Folder to search")
+			.setDesc(
+				"Path relative to vault root. Leave empty to search the entire vault.",
+			)
+			.addText((text) =>
+				text
+					.setPlaceholder("Notes/Daily")
+					.setValue(this.plugin.settings.folderPath)
+					.onChange(async (value) => {
+						this.plugin.settings.folderPath = value;
+						await this.plugin.saveSettings();
+					}),
+			);
 	}
 }
