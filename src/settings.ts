@@ -1,6 +1,7 @@
 import { App, PluginSettingTab, Setting } from "obsidian";
 
 import RandomNoteFromFolderPlugin from "./main";
+import { FolderSuggest } from "./ui/FolderSuggest";
 
 export interface RandomNoteFromFolderSettings {
 	/**
@@ -31,14 +32,16 @@ export class RandomNoteFromFolderSettingTab extends PluginSettingTab {
 			.setDesc(
 				"Path relative to vault root. Leave empty to search the entire vault.",
 			)
-			.addText((text) =>
+			.addText((text) => {
 				text
 					.setPlaceholder("Notes/Daily")
 					.setValue(this.plugin.settings.folderPath)
 					.onChange(async (value) => {
 						this.plugin.settings.folderPath = value;
 						await this.plugin.saveSettings();
-					}),
-			);
+					});
+
+				new FolderSuggest(this.app, text.inputEl);
+			});
 	}
 }
