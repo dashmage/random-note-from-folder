@@ -1,6 +1,10 @@
 # Random Note From Folder
 
-An Obsidian plugin that opens a random note from a user-configured directory. Similar to Obsidian's core "Open random note" but provides an option to scope notes from a specific folder.
+An Obsidian plugin that opens a random note from a user-configured directory. Similar to Obsidian's core [Random Note](https://help.obsidian.md/plugins/random-note) plugin but provides an option to scope notes from a specific folder.
+
+Created this mainly because I wanted a way to checkout my daily notes randomly without including any of the other notes in my vault.
+
+Put this together in a couple of hours with the help of [opencode](https://opencode.ai/) and OpenAI's GPT 5.2 model.
 
 ## Features
 - Configure a directory in settings (random note is selected recursively from that folder and any subfolders).
@@ -34,6 +38,3 @@ An Obsidian plugin that opens a random note from a user-configured directory. Si
 - [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code.
 - This project already has eslint preconfigured, you can invoke a check by running`npm run lint` together with a custom eslint [plugin](https://github.com/obsidianmd/eslint-plugin) for Obsidan specific code guidelines.
 - A GitHub action is preconfigured to automatically lint every commit on all branches.
-
-## License
-MIT License.
