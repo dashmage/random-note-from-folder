@@ -34,7 +34,7 @@ export class RandomNoteFromFolderSettingTab extends PluginSettingTab {
 			)
 			.addText((text) => {
 				text
-					.setPlaceholder("Notes/Daily")
+					.setPlaceholder("Notes")
 					.setValue(this.plugin.settings.folderPath)
 					.onChange(async (value) => {
 						this.plugin.settings.folderPath = value;

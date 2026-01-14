@@ -26,12 +26,12 @@ export function resolveBaseFolder(app: App, folderPath: string): TFolder | null 
 	const normalized = trimmed.replace(/\\/g, "/").replace(/^\/+/, "");
 	const abstractFile = app.vault.getAbstractFileByPath(normalized);
 	if (!abstractFile) {
-		new Notice(`Random Note From Folder: Folder not found: ${trimmed}`);
+		new Notice(`Folder not found: ${trimmed}`);
 		return null;
 	}
 
 	if (!(abstractFile instanceof TFolder)) {
-		new Notice(`Random Note From Folder: Not a folder: ${trimmed}`);
+		new Notice(`Not a folder: ${trimmed}`);
 		return null;
 	}
 

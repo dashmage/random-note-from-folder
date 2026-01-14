@@ -8,14 +8,14 @@ export async function openRandomNoteFromFolder(app: App, folderPath: string): Pr
 
 	if (notes.length === 0) {
 		const baseLabel = folderPath.trim() ? folderPath.trim() : "<vault root>";
-		new Notice(`Random Note From Folder: No notes found under ${baseLabel}`);
+		new Notice(`No notes found under ${baseLabel}`);
 		return;
 	}
 
 	const chosenIndex = Math.floor(Math.random() * notes.length);
 	const chosen = notes[chosenIndex];
 	if (!chosen) {
-		new Notice("Random Note From Folder: Failed to select a random note");
+		new Notice("Failed to select a random note");
 		return;
 	}
 
