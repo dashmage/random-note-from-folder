@@ -15,8 +15,10 @@ Put this together in a couple of hours with the help of [opencode](https://openc
 1. Clone or download this repository.
 2. Navigate to the plugin directory and install dependencies: `npm install`.
 3. Build the plugin: `npm run build`.
-4. Copy the `main.js`, `styles.css` (if present), and `manifest.json` to your Obsidian vault's `.obsidian/plugins/random-note-from-folder/` directory.
+4. Copy the `main.js`, and `manifest.json` to your Obsidian vault's `.obsidian/plugins/random-note-from-folder/` directory.
 5. Enable the plugin in Settings > Community Plugins > Installed Plugins.
+
+Alternatively, download the `main.json` and `manifest.json` file from the GitHub [releases page](https://github.com/dashmage/random-note-from-folder/releases).
 
 ## Usage
 1. Go to Settings > Plugin Options > Random Note From Folder.
