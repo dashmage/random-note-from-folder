@@ -3,7 +3,7 @@
 	"name": "Random Note From Folder",
 	"version": "1.0.0",
 	"minAppVersion": "1.0.0",
-	"description": "Open a random markdown note from a configured folder (recursive)",
+	"description": "Open a random note from a user-configured folder",
 	"author": "dashmage",
 	"isDesktopOnly": false
 }
